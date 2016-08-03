@@ -11,7 +11,8 @@
     <link rel="stylesheet" href="style.css" type="text/css" />
     <script>
     'use strict';
-    var remote = require('remote');
+    var electron = require("electron");
+    var remote = electron.remote;
     var MilkCocoa = remote.require('milkcocoa');
     var $ = require('./jquery-1.10.2.min.js');
     //1.ミルクココアインスタンスを作成

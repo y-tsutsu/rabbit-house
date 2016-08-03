@@ -1,16 +1,12 @@
-'use strict';
+"use strict";
 
-var app = require('app');
-var BrowserWindow = require('browser-window');
+const electron = require("electron");
+const app = electron.app;
+const BrowserWindow = electron.BrowserWindow;
+let mainWindow;
 
-require('crash-reporter').start();
-
-// mainWindowはグローバルにしとかないとGCで勝手に閉じてしまう
-var mainWindow = null;
-
-// ウインドウが全部閉じたら実行
+// 全てのウィンドウが閉じたら終了
 app.on('window-all-closed', function() {
-  // Macとか(darwin)では、Cmd + Q が押されない限りアプリは終了させない
   if (process.platform != 'darwin') {
     app.quit();
   }
@@ -18,13 +14,15 @@ app.on('window-all-closed', function() {
 
 // Electronの初期化完了後に実行
 app.on('ready', function() {
-  // メインウインドウ
+  // メイン画面の表示。ウィンドウの幅、高さを指定できる
   mainWindow = new BrowserWindow({width: 800, height: 600});
-  mainWindow.loadUrl('file://' + __dirname + '/index.html');
+  mainWindow.loadURL('file://' + __dirname + '/index.html');
 
-  // メインウィンドウが閉じられたら実行
+  // デバッグするためのDevToolsを表示
+  // mainWindow.webContents.openDevTools()
+
+  // ウィンドウが閉じられたらアプリも終了
   mainWindow.on('closed', function() {
-    // 参照外し
     mainWindow = null;
   });
 });
