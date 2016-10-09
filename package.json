@@ -6,7 +6,21 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/y-tsutsu/rabbit-house.git"
+  },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/y-tsutsu/rabbit-house/issues"
+  },
+  "homepage": "https://github.com/y-tsutsu/rabbit-house#readme",
+  "devDependencies": {
+    "milkcocoa": "^0.6.0"
+  },
+  "dependencies": {
+    "milkcocoa": "^0.6.0"
+  }
 }
