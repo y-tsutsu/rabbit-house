@@ -1,5 +1,5 @@
 {
-  "name": "RabbitHouse",
+  "name": "rabbit-house",
   "version": "1.0.0",
   "description": "",
   "main": "main.js",
@@ -17,10 +17,7 @@
     "url": "https://github.com/y-tsutsu/rabbit-house/issues"
   },
   "homepage": "https://github.com/y-tsutsu/rabbit-house#readme",
-  "devDependencies": {
-    "milkcocoa": "^0.6.0"
-  },
   "dependencies": {
-    "milkcocoa": "^0.6.0"
+    "milkcocoa": "^0.7.0"
   }
 }
